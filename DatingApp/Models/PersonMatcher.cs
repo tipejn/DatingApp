@@ -6,9 +6,14 @@ namespace DatingApp.Models
 {
     public class PersonMatcher
     {
-        private List<IPersonValidator> validators = new List<IPersonValidator> { new AgeValidator(), new EyesColorValidator(), new HeightValidator() };
+        private IEnumerable<IPersonValidator> validators;
         public Person Woman { get; set; }
         public Person Man { get; set; }
+
+        public PersonMatcher(IEnumerable<IPersonValidator> validators)
+        {
+            this.validators = validators;
+        }
 
         public bool Matched()
         {
