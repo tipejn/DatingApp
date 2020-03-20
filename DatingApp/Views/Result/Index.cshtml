@@ -1,0 +1,13 @@
+﻿@model PersonMatcher
+
+<h1>Wynik</h1>
+<div class="text-center">
+    <p class="h4">@Model.Man.Name</p>
+    <p class="h4 ">i</p>
+    <p class="h4">@Model.Woman.Name</p>
+    <p class="h4">@(Model.Matched() ? "pasują" : "nie pasują")</p>
+    <p class="h4">do siebie</p>
+</div>
+<form asp-action="Start" asp-controller="Woman">
+    <button type="submit" class="btn btn-primary">Od nowa</button>
+</form>
