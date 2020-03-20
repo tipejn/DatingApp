@@ -1,0 +1,29 @@
+﻿@model Person
+
+<h1>@(Model.Gender == Gender.Female ? "Kobieta" : "Mężczyzna")</h1>
+<form asp-action="Next" method="post">
+    <div class="form-group">
+        <label asp-for="Name">Imię</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Height">Wzrost</label>
+        <input asp-for="Height" class="form-control" />
+        <small class="form-text text-muted">
+            Proszę podać wzrost w metrach
+        </small>
+        <span asp-validation-for="Height" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BirthDate">Data urodzenia</label>
+        <input asp-for="BirthDate" class="form-control" asp-format="{0:yyyy-MM-dd}" />
+        <span asp-validation-for="BirthDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BirthDate">Kolor oczu</label>
+        <select asp-for="EyesColor" asp-items="Html.GetEnumSelectList<EyesColor>()" class="form-control"></select>
+    </div>
+    <input type="hidden" asp-for="Gender" value="@Model.Gender" />
+    <button type="submit" class="btn btn-primary">Dalej</button>
+</form>
