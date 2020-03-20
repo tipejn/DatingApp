@@ -8,10 +8,14 @@ namespace DatingApp.Infrastructure
         {
             var today = DateTime.Today;
             int diffYears = today.Year - date.Year;
+            double diffDays = (today.AddYears(-diffYears) - date).Days;
 
-            double diffDays = 1 / (double)(today.AddYears(-diffYears) - date).Days;
+            if (diffDays != 0)
+            {
+                return diffYears + 1 / diffDays;
+            }
 
-            return diffYears + diffDays;
+            return diffYears;
         }
     }
 }

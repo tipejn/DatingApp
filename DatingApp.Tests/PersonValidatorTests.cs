@@ -11,8 +11,8 @@ namespace DatingApp.Tests
         [Fact]
         public void CanValidateAgeDiff()
         {
-            Person w1 = new Person { BirthDate = new DateTime(2000, 1, 1) };
-            Person m1 = new Person { BirthDate = new DateTime(2000, 1, 1) };
+            Person w1 = new Person { BirthDate = new DateTime(2000, DateTime.Now.Month, DateTime.Now.Day) };
+            Person m1 = new Person { BirthDate = new DateTime(2000, DateTime.Now.Month, DateTime.Now.Day) };
             Person w2 = new Person { BirthDate = new DateTime(2000, 1, 1) };
             Person m2 = new Person { BirthDate = new DateTime(1994, 12, 31) };
 
