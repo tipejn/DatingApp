@@ -29,7 +29,10 @@ namespace DatingApp
             services.AddTransient<IPersonValidator, AgeValidator>();
             services.AddTransient<IPersonValidator, HeightValidator>();
             services.AddTransient<IPersonValidator, EyesColorValidator>();
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(_ => "Nieprawidłowa wartość");
+            });
             services.AddMemoryCache();
             services.AddSession();
         }

@@ -11,14 +11,13 @@ namespace DatingApp.Models
     {
         [Required(ErrorMessage = "Proszę podać imię")]
         public string Name { get; set; }
-        [Required]
-        [Range(0.5, 5, ErrorMessage = "Proszę podać prawidłową wartość")]
+        [Required(ErrorMessage = "Proszę podać prawidłową wartość")]
+        [Range(0.1, 4, ErrorMessage = "Proszę podać wartość między 0.1 a 4")]
         public double Height { get; set; }
-        [Required(ErrorMessage = "Proszę podać datę urodzin w formacie rrrr-mm-dd")]
+        [Required]
         [UIHint("Date")]
         [MustBeAdult(ErrorMessage = "Osoba musi być pełnoletnia")]
         public DateTime BirthDate { get; set; }
-        [Required]
         public EyesColor EyesColor { get; set; }
         public Gender Gender { get; set; }
     }
