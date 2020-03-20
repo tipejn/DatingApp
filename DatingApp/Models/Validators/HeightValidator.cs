@@ -2,10 +2,10 @@
 {
     public class HeightValidator : IPersonValidator
     {
-        private double minDiff = 0.10;
+        private int minDiff = 10;
         public bool Matched(Person woman, Person man)
         {
-            return (man.Height - woman.Height) >= minDiff;
+            return ((int)(man.Height * 100) - (int)(woman.Height * 100)) >= minDiff;
         }
     }
 }
