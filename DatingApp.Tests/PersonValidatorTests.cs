@@ -25,10 +25,10 @@ namespace DatingApp.Tests
         [Fact]
         public void CanValidateHeight()
         {
-            Person w1 = new Person { Height = 1.6 };
-            Person m1 = new Person { Height = 1.69 };
-            Person w2 = new Person { Height = 1.60 };
-            Person m2 = new Person { Height = 1.71 };
+            Person w1 = new Person { Height = 1.6f };
+            Person m1 = new Person { Height = 1.69f };
+            Person w2 = new Person { Height = 1.60f };
+            Person m2 = new Person { Height = 1.71f };
 
             HeightValidator validator = new HeightValidator();
 
