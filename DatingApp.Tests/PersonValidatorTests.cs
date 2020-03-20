@@ -11,10 +11,10 @@ namespace DatingApp.Tests
         [Fact]
         public void CanValidateAgeDiff()
         {
-            Person w1 = new Person { BirthDate = new DateTime(1990, 1, 1) };
-            Person m1 = new Person { BirthDate = new DateTime(1992, 1, 1) };
-            Person w2 = new Person { BirthDate = new DateTime(1990, 1, 1) };
-            Person m2 = new Person { BirthDate = new DateTime(1996, 1, 1) };
+            Person w1 = new Person { BirthDate = new DateTime(2000, 1, 1) };
+            Person m1 = new Person { BirthDate = new DateTime(2000, 1, 1) };
+            Person w2 = new Person { BirthDate = new DateTime(2000, 1, 1) };
+            Person m2 = new Person { BirthDate = new DateTime(1994, 12, 31) };
 
             AgeValidator validator = new AgeValidator();
 
