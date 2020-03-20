@@ -38,7 +38,7 @@ namespace DatingApp
             app.UseBrowserLink();
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
